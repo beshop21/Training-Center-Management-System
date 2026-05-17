@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BusinesLayer/BusinesLayer.csproj" />
+  <Project Path="DataLayer/DataLayer.csproj" />
+  <Project Path="Training Center Management System.csproj" Id="d62e8015-71ef-4867-b972-d4afd32bfd4d" />
+</Solution>
