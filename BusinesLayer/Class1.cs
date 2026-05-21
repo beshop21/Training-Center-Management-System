@@ -1,4 +1,10 @@
-﻿namespace BusinesLayer
+﻿
+
+
+
+
+
+namespace BusinesLayer
 {
     public class Class1
     {
