@@ -8,7 +8,7 @@ namespace DataLayer
     public class CoursesData
     {
 
-        public static int InsertNewCourse(string title, DateTime hourse, float price, DateTime startdate, bool isactive)
+        public static int InsertNewCourse(string title, int hourse, float price, DateTime startdate, bool isactive)
         {
             int CourseId = -1;
 
@@ -115,7 +115,7 @@ namespace DataLayer
         }
 
 
-        public static bool GetCourseByname(string Title, ref DateTime Hourse,
+        public static bool GetCourseByname(string Title, ref int Hourse,
     ref float Price, ref DateTime StartDate, ref bool IsActive)
         {
             bool isfound = false;
@@ -138,7 +138,7 @@ namespace DataLayer
                 {
                     isfound = true;
 
-                    Hourse = (DateTime)reader["Hourse"];
+                    Hourse = (int)reader["Hourse"];
                     Price = Convert.ToSingle(reader["Price"]);
                     StartDate = (DateTime)reader["StartDate"];
                     IsActive = (bool)reader["IsActive"];
