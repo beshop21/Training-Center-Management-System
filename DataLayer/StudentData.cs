@@ -28,10 +28,20 @@ namespace DataLayer
                 comnd.Parameters.AddWithValue("@ThirdName", thirdname);
             }
            else
-                comnd.Parameters.AddWithValue("@ThirdName",System.DBNull.Value);
+              comnd.Parameters.AddWithValue("@ThirdName",System.DBNull.Value);
             comnd.Parameters.AddWithValue("@phone", phone);
-            comnd.Parameters.AddWithValue("@Email", email);
-            comnd.Parameters.AddWithValue("@DateoFBirth", dateofbrith);
+            if(email!=null && email != "")
+            {
+                comnd.Parameters.AddWithValue("@Email", email);
+            }
+            else
+              comnd.Parameters.AddWithValue("@Email", System.DBNull.Value);
+           
+            if(dateofbrith!=null)
+            {
+                comnd.Parameters.AddWithValue("@DateoFBirth", dateofbrith);
+            }
+            comnd.Parameters.AddWithValue("@DateoFBirth", System.DBNull.Value);
             comnd.Parameters.AddWithValue("@CreatedAt", createat);
 
             try
@@ -68,16 +78,31 @@ namespace DataLayer
                                     phone=@phone,
                                     Email=@Email,
                                     DateoFBirth=@DateoFBirth,
-                                    CreatedAt=@CreatedAt where StudentID=StudentID";
+                                    CreatedAt=@CreatedAt where StudentID=@StudentID";
 
             SqlCommand comnd = new SqlCommand(qeury, connection);
-            comnd.Parameters.AddWithValue("StudentID", id);
+            comnd.Parameters.AddWithValue("@StudentID", id);
             comnd.Parameters.AddWithValue("@FirstName", firstname);
             comnd.Parameters.AddWithValue("@SecondName", secondname);
-            comnd.Parameters.AddWithValue("@ThirdName", thirdname);
+            if (thirdname != null && thirdname != "")
+            {
+                comnd.Parameters.AddWithValue("@ThirdName", thirdname);
+            }
+            else
+                comnd.Parameters.AddWithValue("@ThirdName", System.DBNull.Value);
             comnd.Parameters.AddWithValue("@phone", phone);
-            comnd.Parameters.AddWithValue("@Email", email);
-            comnd.Parameters.AddWithValue("@DateoFBirth", dateofbrith);
+            if (email != null && email != "")
+            {
+                comnd.Parameters.AddWithValue("@Email", email);
+            }
+            else
+                comnd.Parameters.AddWithValue("@Email", System.DBNull.Value);
+
+            if (dateofbrith != null)
+            {
+                comnd.Parameters.AddWithValue("@DateoFBirth", dateofbrith);
+            }
+            comnd.Parameters.AddWithValue("@DateoFBirth", System.DBNull.Value);
             comnd.Parameters.AddWithValue("@CreatedAt", createat);
 
             try
