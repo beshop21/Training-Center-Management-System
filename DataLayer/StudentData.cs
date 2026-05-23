@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Data.SqlClient;
 using System;
+using System.Data;
 using System.Data.Common;
 using System.Runtime.InteropServices;
 
@@ -22,7 +23,12 @@ namespace DataLayer
 
             comnd.Parameters.AddWithValue("@FirstName", firstname);
             comnd.Parameters.AddWithValue("@SecondName", secondname);
-            comnd.Parameters.AddWithValue("@ThirdName", thirdname);
+           if(thirdname!=null && thirdname != "")
+            {
+                comnd.Parameters.AddWithValue("@ThirdName", thirdname);
+            }
+           else
+                comnd.Parameters.AddWithValue("@ThirdName",System.DBNull.Value);
             comnd.Parameters.AddWithValue("@phone", phone);
             comnd.Parameters.AddWithValue("@Email", email);
             comnd.Parameters.AddWithValue("@DateoFBirth", dateofbrith);
@@ -156,5 +162,41 @@ namespace DataLayer
             }
             return isfound;
         }
+
+        public static DataTable GetAllStudent()
+        {
+            DataTable dt = new DataTable();
+
+            SqlConnection connection = new SqlConnection(DataSettings.Stringconnection);
+            string query = "select * from Students ";
+            SqlCommand comd = new SqlCommand(query, connection);
+            try
+            {
+
+                connection.Open();
+                SqlDataReader reader = comd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+
+
+
+            }catch(Exception ex)
+            {
+
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+        }
+
+
+
+
     }
 }
