@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.TrainingStrip = new System.Windows.Forms.MenuStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StudentToolstrip = new System.Windows.Forms.ToolStripMenuItem();
             this.CoursestoolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.EnrollmentstoolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.UserstoolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingstoolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TrainingStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -52,17 +52,6 @@
             this.TrainingStrip.Size = new System.Drawing.Size(926, 72);
             this.TrainingStrip.TabIndex = 0;
             this.TrainingStrip.Text = "TrainingStrip";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._360_F_1936663921_Q9MXf5xaV01eDXeiWQ2whaHZKDXFzuGb;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(926, 378);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // StudentToolstrip
             // 
@@ -109,6 +98,17 @@
             this.SettingstoolStrip.Size = new System.Drawing.Size(148, 68);
             this.SettingstoolStrip.Text = "Settings";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._360_F_1936663921_Q9MXf5xaV01eDXeiWQ2whaHZKDXFzuGb;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 72);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(926, 378);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +119,7 @@
             this.MainMenuStrip = this.TrainingStrip;
             this.Name = "FrmMain";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.TrainingStrip.ResumeLayout(false);
             this.TrainingStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

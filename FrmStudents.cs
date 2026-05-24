@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Training_Center_Management_System
 {
-    public partial class FrmMain : Form
+    public partial class FrmStudents : Form
     {
-        public FrmMain()
+        public FrmStudents()
         {
             InitializeComponent();
-        }
-
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
