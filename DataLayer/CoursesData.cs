@@ -115,7 +115,7 @@ namespace DataLayer
         }
 
 
-        public static bool GetCourseByname(string Title, ref int Hourse,
+        public static bool GetCourseByname(ref int id,string Title, ref int Hourse,
     ref float Price, ref DateTime StartDate, ref bool IsActive)
         {
             bool isfound = false;
@@ -137,7 +137,7 @@ namespace DataLayer
                 if (reader.Read())
                 {
                     isfound = true;
-
+                    id = (int)reader["CourseID"];
                     Hourse = (int)reader["Hourse"];
                     Price = Convert.ToSingle(reader["Price"]);
                     StartDate = (DateTime)reader["StartDate"];

@@ -11,12 +11,15 @@ namespace BusinesLayer
         public enum EnMode { AddNew=0, Update=1}
         EnMode Mode = EnMode.AddNew;
 
+
         public int CourseID { get; set; }
         public string Title { get; set; }
         public int Hourse { get; set; }
         public float Price { get; set; }
         public DateTime StartDate { get; set; }
         public bool IsActive { get; set; }
+
+
 
 
         public ClsCourses()
@@ -80,7 +83,21 @@ namespace BusinesLayer
         }
 
 
+        public ClsCourses Find(string name)
+        {
 
+            int Id=-1; string title = "";int hourse = -1;float price = -1;
+            DateTime startdate = DateTime.Now; bool isactive = false;
+
+            if (CoursesData.GetCourseByname(ref Id, name,ref hourse,ref price,ref startdate,ref isactive))
+            {
+                return new ClsCourses(Id, name, hourse, price, startdate, isactive);
+           
+            }
+            else
+            return null;
+
+        }
 
         public static bool Delete(int id)
         {
